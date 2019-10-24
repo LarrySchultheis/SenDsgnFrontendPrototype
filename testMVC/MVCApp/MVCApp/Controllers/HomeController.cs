@@ -1,4 +1,5 @@
 ﻿using System;
+using MVCApp.Services;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -47,6 +48,8 @@ namespace MVCApp.Controllers
         public IActionResult PostEntry(DummyData d)
         {
             int x=0;
+            DataEntry de = new DataEntry();
+            de.PostEntry(d);
             return View("HomePage");
         }
 

@@ -5,14 +5,7 @@ using System.Threading.Tasks;
 
 namespace MVCApp.Services
 {
-    public class DataEntry
+    public class ReportGeneration
     {
-
-        public void PostEntry(Models.DummyData d)
-        {
-
-
-
-        }
     }
 }

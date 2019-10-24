@@ -253,3 +253,5 @@ D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0
 D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.csproj.CopyComplete
 D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.dll
 D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.pdb
+D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.csprojAssemblyReference.cache
+D:\GitHub\SenDsgnFrontendPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\Razor\Views\Report\Reports.cshtml.g.cs
