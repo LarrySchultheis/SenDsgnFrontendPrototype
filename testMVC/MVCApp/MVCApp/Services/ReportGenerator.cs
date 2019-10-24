@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MVCApp.Services
 {
-    public class ReportGeneration
+    public class ReportGenerator
     {
     }
 }
