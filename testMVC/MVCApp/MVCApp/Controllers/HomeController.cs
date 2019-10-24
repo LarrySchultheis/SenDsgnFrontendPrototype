@@ -44,8 +44,9 @@ namespace MVCApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostEntry()
+        public IActionResult PostEntry(DummyData d)
         {
+            int x=0;
             return View("HomePage");
         }
 

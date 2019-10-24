@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MVCApp.Models
@@ -8,18 +7,23 @@ namespace MVCApp.Models
     public class DummyData
     {
         public string JobType { get; set; }
-        public string tripNo { get; set; }
-        public string stageNo { get; set; }
+        public string TripNo { get; set; }
+        public string StageNo { get; set; }
         public string EmplName { get; set; }
         public string StartTime { get; set; }
 
-        public DummyData(string JobType, string tripNo, string stageNo, string EmplName, string startTime)
+        public DummyData()
         {
-            this.JobType = JobType;
-            this.tripNo = tripNo;
-            this.stageNo = stageNo;
-            this.EmplName = EmplName;
-            this.StartTime = startTime;
+
         }
+
+        //public DummyData(string JobType, string TripNo, string StageNo, string EmplName, string startTime)
+        //{
+        //    this.JobType = JobType;
+        //    this.TripNo = TripNo;
+        //    this.StageNo = StageNo;
+        //    this.EmplName = EmplName;
+        //    this.StartTime = startTime;
+        //}
     }
 }

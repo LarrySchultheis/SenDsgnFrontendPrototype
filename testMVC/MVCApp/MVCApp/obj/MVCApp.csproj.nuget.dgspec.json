@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\testWebApp\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {}
+    "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {}
   },
   "projects": {
-    "D:\\testWebApp\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
+    "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\testWebApp\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+        "projectUniqueName": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
         "projectName": "MVCApp",
-        "projectPath": "D:\\testWebApp\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+        "projectPath": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
         "packagesPath": "C:\\Users\\larry\\.nuget\\packages\\",
-        "outputPath": "D:\\testWebApp\\testMVC\\MVCApp\\MVCApp\\obj\\",
+        "outputPath": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
