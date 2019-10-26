@@ -34,7 +34,9 @@ namespace MVCApp.Controllers
 
         public IActionResult HomePage()
         {
-            return View("HomePage");
+            RecordRetriever rr = new RecordRetriever();
+            var records = rr.RetrieveRecords();
+            return View("HomePage", records);
         }
 
         [HttpPost]
@@ -45,11 +47,10 @@ namespace MVCApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostEntry(DummyData d)
+        public IActionResult PostEntry(TicketData td)
         {
-            int x=0;
             DataEntry de = new DataEntry();
-            de.PostEntry(d);
+            de.PostEntry(td);
             return View("HomePage");
         }
 

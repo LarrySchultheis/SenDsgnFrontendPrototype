@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MVCApp.Services.DBModels.TicketData>
+@{
     Layout = "_Layout";
 }
 
@@ -40,8 +41,8 @@
         </thead>
 
         <tbody>
-            @{
-                @*foreach (DummyData d in dataList)
+            @*@{
+                foreach (TicketData d in @model)
                 {
                     <tr>
                         <td>@d.JobType</td>
@@ -50,7 +51,18 @@
                         <td>@d.EmplName</td>
                         <td>@d.StartTime</td>
                     </tr>
-                }*@
+                }
+            }*@
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.JobType.JobType1)</td>
+                <td>@Html.DisplayFor(modelItem => item.TripNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.StageNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Employee.EmployeeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.StartTime)</td>
+            </tr>
             }
         </tbody>
     </table>
