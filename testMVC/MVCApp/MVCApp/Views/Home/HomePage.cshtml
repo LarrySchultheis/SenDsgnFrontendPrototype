@@ -29,15 +29,28 @@
 
             @foreach (var item in Model)
             {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.JobType.JobType1)</td>
-                <td>@Html.DisplayFor(modelItem => item.TripNumber)</td>
-                <td>@Html.DisplayFor(modelItem => item.StageNumber)</td>
-                <td>@Html.DisplayFor(modelItem => item.Employee.EmployeeName)</td>
-                <td>@Html.DisplayFor(modelItem => item.StartTime)</td>
-            </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.JobType.JobType1)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TripNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StageNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Employee.EmployeeName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StartTime)</td>
+                </tr>
             }
         </tbody>
     </table>
 </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/datatables.min.css" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/datatables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dummyTable').DataTable();
+    });
+</script>
 

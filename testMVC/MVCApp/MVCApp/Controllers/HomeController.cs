@@ -16,13 +16,11 @@ namespace MVCApp.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            int a = 0;
             return View();
         }
 
         public IActionResult Privacy()
         {
-            int a = 0;
             return View("Index");
         }
 

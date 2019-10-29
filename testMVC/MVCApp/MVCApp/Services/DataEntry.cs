@@ -37,11 +37,22 @@ namespace MVCApp.Services
                     JobTypeId = job.JobTypeId,
                     Employee = e,
                     EmployeeId = e.EmployeeId,
-                    StartTime = td.StartTime
+                    StartTime = td.StartTime,
+                    Comments = td.Comments
                 };
                 context.Employee.Add(e);
                 context.TicketData.Add(tdata);
                 context.SaveChanges();
+
+                int entryID = tdata.EntryId;
+
+                TicketDataLogger tdl = new TicketDataLogger();
+                tdl.LogChange("new entry", "created new entry", entryID);
+
+
+
+
+
             }
 
         }

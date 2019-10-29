@@ -14,6 +14,132 @@
 <br />
 <br />
 
+
+
+<form id="entryForm" class="form-horizontal" asp-action="PostEntry" asp-controller="Home" onsubmit="return verifyInput()">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="jType">Job Type:</label>
+        <div class="col-sm-10">
+            <select asp-for="JobType.JobType1" class="form-control" id="jobType" onchange="updateFields()">
+                <option value="">Please Select</option>
+                <option value="Pallet Picker">Pallet Picker</option>
+                <option value="Case Picker">Case Picker</option>
+                <option value="Amazon">Amazon</option>
+                <option value="UPS">UPS</option>
+                <option value="Inbound">Inbound</option>
+                <option value="Outbound">Outbound</option>
+                <option value="Stage">Stage</option>
+                <option value="Putaway">Putaway</option>
+                <option value="Pallet Transfer">Pallet Transfer</option>
+                <option value="Restocking WMU">Restocking WMU</option>
+                <option value="Rework">Rework</option>
+                <option value="Swing Load">Swing Load</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+        </div> 
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="tripNumber">Trip Number:</label>
+        <div class="col-sm-10">
+            <input asp-for="TripNumber" type="number" class="form-control" id="tripNumber">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="stageNumber">Stage Number:</label>
+        <div class="col-sm-10">
+            <input asp-for="StageNumber" type="text" class="form-control" id="stageNumber">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="employeeName">Employee Name:</label>
+        <div class="col-sm-10">
+            <input asp-for="Employee.EmployeeName" type="text" class="form-control" id="employeeName">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="startTime">Start Time:</label>
+        <div class="col-sm-10">
+            <input asp-for="StartTime" type="time" class="form-control" id="startTime">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="comments">Comments</label>
+        <div class="col-sm-10">
+            <textarea asp-for="Comments" class="form-control" id="comments"></textarea>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn-dark" id="subBtn">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script>
+
+    function restoreDefaultFields() {
+        var form = document.getElementById('entryForm')
+        //console.log(form)
+
+    }
+
+    function updateFields() {
+
+        restoreDefaultFields()
+        var jType = document.getElementById('jobType')
+        //console.log(jType)
+        if (jType.selectedIndex == 1) { //pallet picker
+           
+        }
+        else if (jType.value == 2) { //case picker
+            //add cases number and pallet wrap number
+        }
+        else if (jType.value == 3) { //amazon
+
+        }
+        else if (jType.value == 4) { //ups
+
+        }
+        else if (jType.value == 5) { //inbound
+            //add trailer no. and carrier fields
+        }
+        else if (jType.value == 6) { //outbound
+            //add barrier/ALCOR and ASN fields
+        } 
+        else if (jType.value == 7) { //stage
+
+        }
+        else if (jType.value == 8) { //putaway
+
+        }
+        else if (jType.value == 9) { //pallet transfer
+
+        }
+        else if (jType.value == 10) { //restocking WMU
+
+        }
+        else if (jType.value == 11) { //rework
+
+        }
+        else if (jType.value == 12) { //swing load 
+
+        }
+        else if (jType.value == 13) { //misc
+            //default
+        }
+
+
+    }
+
+
+
+</script>
+
 <script>
     function verifyInput() {
         var jType = document.getElementById('jobType')
@@ -21,12 +147,7 @@
         var stageNum = document.getElementById('stageNumber')
         var empName = document.getElementById('employeeName')
         var startTime = document.getElementById('startTime')
-        //console.log(document.forms)
-        //console.log(jtype)
-        //console.log(tripNum)
-        //console.log(stageNum)
-        //console.log(empName)
-        //console.log(startTime)
+
 
         if (jType.selectedIndex < 1) {
             alert('Please select a Job Type')
@@ -52,61 +173,5 @@
         return true
     }
 </script>
-
-<form name="entryForm" class="form-horizontal" asp-action="PostEntry" asp-controller="Home" onsubmit="return verifyInput()">
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="jType">Job Type:</label>
-        <div class="col-sm-10">
-            <select asp-for="JobType.JobType1" class="form-control" id="jobType">
-                <option value="">Please Select</option>
-                <option value="Pallet Picker">Pallet Picker</option>
-                <option value="Case Picker">Case Picker</option>
-                <option value="Amazon">Amazon</option>
-                <option value="UPS">UPS</option>
-                <option value="Inbound">Inbound</option>
-                <option value="Outbound">Outbound</option>
-                <option value="Stage">Stage</option>
-                <option value="Putaway">Putaway</option>
-                <option value="Pallet Transfer">Pallet Transfer</option>
-                <option value="Restocking WMU">Restocking WMU</option>
-                <option value="Rework">Rework</option>
-                <option value="Swing Load">Swing Load</option>
-                <option value="Miscellaneous">Miscellaneous</option>
-            </select>
-        </div> 
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="tripNo">Trip Number:</label>
-        <div class="col-sm-10">
-            <input asp-for="TripNumber" type="number" class="form-control" id="tripNumber">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="stgNo">Stage Number:</label>
-        <div class="col-sm-10">
-            <input asp-for="StageNumber" type="text" class="form-control" id="stageNumber">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="empName">Employee Name:</label>
-        <div class="col-sm-10">
-            <input asp-for="Employee.EmployeeName" type="text" class="form-control" id="employeeName">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="startTime">Start Time:</label>
-        <div class="col-sm-10">
-            <input asp-for="StartTime" type="datetime" class="form-control" id="startTime">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn-dark" id="subBtn">Submit</button>
-        </div>
-    </div>
-</form>
 
 
