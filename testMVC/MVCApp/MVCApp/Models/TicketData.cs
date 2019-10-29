@@ -1,29 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace MVCApp.Models
 {
-    public class TicketData
+    public partial class TicketData
     {
-        public string JobType { get; set; }
-        public int TripNo { get; set; }
-        public string StageNo { get; set; }
-        public string EmplName { get; set; }
-        public DateTime StartTime { get; set; }
-
         public TicketData()
         {
-
+            TicketDataLog = new HashSet<TicketDataLog>();
         }
 
-        public TicketData(string JobType, int TripNo, string StageNo, string EmplName, DateTime startTime)
-        {
-            this.JobType = JobType;
-            this.TripNo = TripNo;
-            this.StageNo = StageNo;
-            this.EmplName = EmplName;
-            this.StartTime = startTime;
-        }
+        public int EntryId { get; set; }
+        public int TripNumber { get; set; }
+        public string StageNumber { get; set; }
+        public int JobTypeId { get; set; }
+        public int EmployeeId { get; set; }
+        public DateTime StartTime { get; set; }
+        public string Comments { get; set; }
+        public DateTime? EntryDate { get; set; }
+        public string PalletNumber { get; set; }
+        public DateTime? EndTime { get; set; }
+        public string PalletType { get; set; }
+        public int? PalletWrapsNumber { get; set; }
+        public string Carrier { get; set; }
+        public string TrailerNo { get; set; }
+
+        public virtual Employee Employee { get; set; }
+        public virtual JobType JobType { get; set; }
+        public virtual ICollection<TicketDataLog> TicketDataLog { get; set; }
     }
 }

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MVCApp.Models;
-
 namespace MVCApp.Controllers
 {
     public class HomeController : Controller
@@ -51,7 +50,10 @@ namespace MVCApp.Controllers
         {
             DataEntry de = new DataEntry();
             de.PostEntry(td);
-            return View("HomePage");
+           
+            return View("DataEntry");
+
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MVCApp.Services.DBModels;
+using MVCApp.Models;
 
 namespace MVCApp.Services
 {
     public class DataEntry
     {
 
-        public void PostEntry(Models.TicketData td)
+        public void PostEntry(TicketData td)
         {
             var x = td;
             using (var context = new TicketingSystemContext())
@@ -19,7 +19,7 @@ namespace MVCApp.Services
 
                 foreach (JobType j in jobs)
                 {
-                    if (td.JobType == j.JobType1)
+                    if (td.JobType.JobType1 == j.JobType1)
                     {
                         job = j;
                         break;
@@ -27,12 +27,12 @@ namespace MVCApp.Services
                 }
                 var e = new Employee()
                 {
-                    EmployeeName = td.EmplName
+                    EmployeeName = td.Employee.EmployeeName
                 };
                 var tdata = new TicketData()
                 {
-                    TripNumber = td.TripNo,
-                    StageNumber = td.StageNo,
+                    TripNumber = td.TripNumber,
+                    StageNumber = td.StageNumber,
                     JobType = job,
                     JobTypeId = job.JobTypeId,
                     Employee = e,

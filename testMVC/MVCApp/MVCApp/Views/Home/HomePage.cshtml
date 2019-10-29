@@ -1,24 +1,9 @@
-﻿@model IEnumerable<MVCApp.Services.DBModels.TicketData>
+﻿@model IEnumerable<MVCApp.Models.TicketData>
 @{
     Layout = "_Layout";
 }
 
 <!DOCTYPE html>
-
-@*@{
-    List<DummyData> dataList = new List<DummyData>();
-    DummyData data;
-    data = new DummyData("Stage", "1234ASD", "3A", "Lars Umlaut", "12:30");
-    dataList.Add(data);
-    data = new DummyData("UPS", "233FSDF", "3A", "Jethro Abernathy", "12:30");
-    dataList.Add(data);
-    data = new DummyData("Pallete Picker", "1234DGF", "3A", "Jed Cumberbatch", "12:30");
-    dataList.Add(data);
-    data = new DummyData("Amazon", "234ERDB", "3A", "Benedict Smith", "12:30");
-    dataList.Add(data);
-    data = new DummyData("Stage", "233SDCS", "3A", "Gustaf Gundarsonn", "12:30");
-    dataList.Add(data);
-}*@
 
 
 <div class="text-center">
@@ -41,18 +26,6 @@
         </thead>
 
         <tbody>
-            @*@{
-                foreach (TicketData d in @model)
-                {
-                    <tr>
-                        <td>@d.JobType</td>
-                        <td>@d.TripNo</td>
-                        <td>@d.StageNo</td>
-                        <td>@d.EmplName</td>
-                        <td>@d.StartTime</td>
-                    </tr>
-                }
-            }*@
 
             @foreach (var item in Model)
             {
@@ -68,13 +41,3 @@
     </table>
 </div>
 
-@*<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>*@
-
-
-@*<script>
-    $(document).ready(function () {
-        console.log($('#dummyTable'))
-        $('#dummyTable').DataTable();
-    });</script>*@

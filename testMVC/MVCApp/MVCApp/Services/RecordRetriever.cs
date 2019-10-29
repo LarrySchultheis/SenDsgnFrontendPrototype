@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using MVCApp.Services.DBModels;
+using MVCApp.Models;
 
 namespace MVCApp.Services
 {
@@ -15,6 +15,17 @@ namespace MVCApp.Services
             {
 
                 var tdata = context.TicketData.ToList();
+                foreach(TicketData td in tdata)
+                {
+                    td.Employee = context.Employee.Find(td.EmployeeId);
+                    //td.Employee.EmployeeName = context.Employee.Find(td.EmployeeId).EmployeeName;
+
+                    td.JobType = context.JobType.Find(td.JobTypeId);
+                   // td.JobType.JobType1 = td.JobType.JobType1;
+                    var x = 1;
+                }
+
+
                 return tdata;
 
             }
