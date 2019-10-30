@@ -11,17 +11,16 @@ namespace MVCApp.Services
     {
         public IEnumerable<TicketData> RetrieveRecords()
         {
-            using (var context = new TicketingSystemContext())
+            using (var context = new TicketingSystemDBContext())
             {
 
                 var tdata = context.TicketData.ToList();
-                foreach(TicketData td in tdata)
+                foreach (TicketData td in tdata)
                 {
-                    td.Employee = context.Employee.Find(td.EmployeeId);
                     //td.Employee.EmployeeName = context.Employee.Find(td.EmployeeId).EmployeeName;
 
                     td.JobType = context.JobType.Find(td.JobTypeId);
-                   // td.JobType.JobType1 = td.JobType.JobType1;
+                    // td.JobType.JobType1 = td.JobType.JobType1;
                     var x = 1;
                 }
 

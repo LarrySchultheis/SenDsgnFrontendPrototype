@@ -8130,11 +8130,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+      "projectUniqueName": "G:\\Github\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
       "projectName": "MVCApp",
-      "projectPath": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+      "projectPath": "G:\\Github\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
       "packagesPath": "C:\\Users\\larry\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\obj\\",
+      "outputPath": "G:\\Github\\SenDsgnFrontendPrototype\\testMVC\\MVCApp\\MVCApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

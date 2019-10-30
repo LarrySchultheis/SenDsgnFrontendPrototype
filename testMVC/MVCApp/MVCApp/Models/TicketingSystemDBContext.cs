@@ -4,18 +4,17 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MVCApp.Models
 {
-    public partial class TicketingSystemContext : DbContext
+    public partial class TicketingSystemDBContext : DbContext
     {
-        public TicketingSystemContext()
+        public TicketingSystemDBContext()
         {
         }
 
-        public TicketingSystemContext(DbContextOptions<TicketingSystemContext> options)
+        public TicketingSystemDBContext(DbContextOptions<TicketingSystemDBContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<JobType> JobType { get; set; }
         public virtual DbSet<TicketData> TicketData { get; set; }
         public virtual DbSet<TicketDataLog> TicketDataLog { get; set; }
@@ -25,22 +24,12 @@ namespace MVCApp.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=localhost;Database=TicketingSystem;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=localhost;Database=TicketingSystemDB;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>(entity =>
-            {
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
-
-                entity.Property(e => e.EmployeeName)
-                    .IsRequired()
-                    .HasMaxLength(256)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<JobType>(entity =>
             {
                 entity.Property(e => e.JobTypeId).HasColumnName("JobTypeID");
@@ -55,7 +44,7 @@ namespace MVCApp.Models
             modelBuilder.Entity<TicketData>(entity =>
             {
                 entity.HasKey(e => e.EntryId)
-                    .HasName("PK__TicketDa__F57BD2D7FC8FA1D5");
+                    .HasName("PK__TicketDa__F57BD2D75106ACF9");
 
                 entity.Property(e => e.EntryId).HasColumnName("EntryID");
 
@@ -65,7 +54,9 @@ namespace MVCApp.Models
 
                 entity.Property(e => e.Comments).IsUnicode(false);
 
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
+                entity.Property(e => e.EmployeeName)
+                    .HasMaxLength(256)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.EndTime).HasColumnType("datetime");
 
@@ -82,32 +73,27 @@ namespace MVCApp.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.StageNumber)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.StartTime).HasColumnType("datetime");
 
-                entity.Property(e => e.TrailerNo)
+                entity.Property(e => e.TrailerNumber)
                     .HasMaxLength(50)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.TicketData)
-                    .HasForeignKey(d => d.EmployeeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TicketDat__Emplo__47DBAE45");
 
                 entity.HasOne(d => d.JobType)
                     .WithMany(p => p.TicketData)
                     .HasForeignKey(d => d.JobTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TicketDat__JobTy__48CFD27E");
+                    .HasConstraintName("FK__TicketDat__JobTy__3D5E1FD2");
             });
 
             modelBuilder.Entity<TicketDataLog>(entity =>
             {
                 entity.HasKey(e => e.LogId)
-                    .HasName("PK__TicketDa__5E5499A8278C8D19");
+                    .HasName("PK__TicketDa__5E5499A865BCD520");
 
                 entity.Property(e => e.LogId).HasColumnName("LogID");
 
@@ -128,7 +114,7 @@ namespace MVCApp.Models
                     .WithMany(p => p.TicketDataLog)
                     .HasForeignKey(d => d.EntryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TicketDat__Entry__5DCAEF64");
+                    .HasConstraintName("FK__TicketDat__Entry__403A8C7D");
             });
 
             OnModelCreatingPartial(modelBuilder);

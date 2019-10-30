@@ -48,7 +48,7 @@ namespace MVCApp.Controllers
         {
             DataEntry de = new DataEntry();
             de.PostEntry(td);
-           
+
             return View("DataEntry");
 
 

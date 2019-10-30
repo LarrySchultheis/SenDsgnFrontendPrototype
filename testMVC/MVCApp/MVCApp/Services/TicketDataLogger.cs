@@ -10,7 +10,7 @@ namespace MVCApp.Services
     {
         public void LogChange(string action, string details, int entryID)
         {
-            using (var context = new TicketingSystemContext())
+            using (var context = new TicketingSystemDBContext())
             {
                 TicketDataLog tdLog = new TicketDataLog()
                 {

@@ -12,7 +12,7 @@ namespace MVCApp.Services
         public void PostEntry(TicketData td)
         {
             var x = td;
-            using (var context = new TicketingSystemContext())
+            using (var context = new TicketingSystemDBContext())
             {
                 IEnumerable<JobType> jobs = context.JobType;
                 JobType job = null;
@@ -25,12 +25,8 @@ namespace MVCApp.Services
                         break;
                     }
                 }
-                var e = new Employee()
-                {
-                    EmployeeName = td.Employee.EmployeeName
-                };
+         
 
-                context.Employee.Add(e);
                 context.TicketData.Add(td);
                 context.SaveChanges();
 
