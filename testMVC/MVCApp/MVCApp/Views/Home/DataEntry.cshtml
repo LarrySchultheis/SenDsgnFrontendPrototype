@@ -38,16 +38,22 @@
             </select>
         </div> 
     </div>
-    <div class="form-group">
+    <div class="form-group" id="tripNoContainer">
         <label class="control-label col-sm-2" for="tripNumber">Trip Number:</label>
         <div class="col-sm-10">
             <input asp-for="TripNumber" type="number" class="form-control" id="tripNumber">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" id="stageNoContainer">
         <label class="control-label col-sm-2" for="stageNumber">Stage Number:</label>
         <div class="col-sm-10">
             <input asp-for="StageNumber" type="text" class="form-control" id="stageNumber">
+        </div>
+    </div>
+
+    <div class="form-group" id="palletWrapsContainer">
+        <div class="col-sm-10" id="palletWrapsInnerContainer">
+
         </div>
     </div>
 
@@ -70,7 +76,6 @@
         <div class="col-sm-10">
             <textarea asp-for="Comments" class="form-control" id="comments"></textarea>
         </div>
-
     </div>
 
     <div class="form-group">
@@ -79,6 +84,10 @@
         </div>
     </div>
 </form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 
 <script>
 
@@ -92,48 +101,50 @@
 
         restoreDefaultFields()
         var jType = document.getElementById('jobType')
-        //console.log(jType)
+        
+        console.log(jType)
+        console.log(jType.selectedIndex)
         if (jType.selectedIndex == 1) { //pallet picker
            
         }
-        else if (jType.value == 2) { //case picker
+        else if (jType.selectedIndex == 2) { //case picker
             //add cases number and pallet wrap number
+            $('<input asp-for="PalletWrapsNumber" type="number" class="form-control" id="palletWrapsNumber">').appendTo($('#palletWrapsInnerContainer'))
+            $('<label class="control-label col-sm-2" for="palletwrapsNumber">Pallet Wraps Number:</label>').insertBefore($('#palletWrapsInnerContainer'))
         }
-        else if (jType.value == 3) { //amazon
+        else if (jType.selectedIndex == 3) { //amazon
 
         }
-        else if (jType.value == 4) { //ups
+        else if (jType.selectedIndex == 4) { //ups
 
         }
-        else if (jType.value == 5) { //inbound
+        else if (jType.selectedIndex == 5) { //inbound
             //add trailer no. and carrier fields
         }
-        else if (jType.value == 6) { //outbound
+        else if (jType.selectedIndex == 6) { //outbound
             //add barrier/ALCOR and ASN fields
         } 
-        else if (jType.value == 7) { //stage
+        else if (jType.selectedIndex == 7) { //stage
 
         }
-        else if (jType.value == 8) { //putaway
+        else if (jType.selectedIndex == 8) { //putaway
 
         }
-        else if (jType.value == 9) { //pallet transfer
+        else if (jType.selectedIndex == 9) { //pallet transfer
 
         }
-        else if (jType.value == 10) { //restocking WMU
+        else if (jType.selectedIndex == 10) { //restocking WMU
 
         }
-        else if (jType.value == 11) { //rework
+        else if (jType.selectedIndex == 11) { //rework
 
         }
-        else if (jType.value == 12) { //swing load 
+        else if (jType.selectedIndex == 12) { //swing load 
 
         }
-        else if (jType.value == 13) { //misc
+        else if (jType.selectedIndex == 13) { //misc
             //default
         }
-
-
     }
 
 
