@@ -23,8 +23,9 @@ namespace MVCApp.Models
         public string PalletType { get; set; }
         public int? PalletWrapsNumber { get; set; }
         public string Carrier { get; set; }
-        public string TrailerNumber { get; set; }
         public int? CasesNumber { get; set; }
+        public int? TrailerNumber { get; set; }
+        public bool IsClosed { get; set; }
 
         public virtual JobType JobType { get; set; }
         public virtual ICollection<TicketDataLog> TicketDataLog { get; set; }

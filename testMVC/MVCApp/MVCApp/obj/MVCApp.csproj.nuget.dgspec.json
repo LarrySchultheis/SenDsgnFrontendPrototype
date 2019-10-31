@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {}
+    "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {}
   },
   "projects": {
-    "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
+    "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+        "projectUniqueName": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
         "projectName": "MVCApp",
-        "projectPath": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
+        "projectPath": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj",
         "packagesPath": "C:\\Users\\larry\\.nuget\\packages\\",
-        "outputPath": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\obj\\",
+        "outputPath": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
