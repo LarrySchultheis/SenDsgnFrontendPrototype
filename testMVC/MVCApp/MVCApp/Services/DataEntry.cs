@@ -9,33 +9,44 @@ namespace MVCApp.Services
     public class DataEntry
     {
 
-        public void PostEntry(TicketData td)
+        public bool PostEntry(TicketData td)
         {
-            var x = td;
-            using (var context = new TicketingSystemDBContext())
+            try
             {
-                IEnumerable<JobType> jobs = context.JobType;
-                JobType job = null;
-
-                foreach (JobType j in jobs)
+                using (var context = new TicketingSystemDBContext())
                 {
-                    if (td.JobType.JobType1 == j.JobType1)
+                    IEnumerable<JobType> jobs = context.JobType;
+                    int jtypeID = 1;
+                    foreach (JobType j in jobs)
                     {
-                        job = j;
-                        break;
+                        if (td.JobType.JobType1 == j.JobType1)
+                        {
+                            jtypeID = j.JobTypeId;
+                            break;
+                        }
                     }
+
+                    td.JobTypeId = jtypeID;
+                    td.EntryDate = DateTime.Now;
+
+                    //very important null assignment
+                    td.JobType = null;
+                    context.TicketData.Add(td);
+                    context.SaveChanges();
+
+                    int entryID = td.EntryId;
+
+                    TicketDataLogger tdl = new TicketDataLogger();
+                    tdl.LogChange("new entry", "created new entry", entryID);
+
                 }
-         
-
-                context.TicketData.Add(td);
-                context.SaveChanges();
-
-                int entryID = td.EntryId;
-
-                TicketDataLogger tdl = new TicketDataLogger();
-                tdl.LogChange("new entry", "created new entry", entryID);
-
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return false;
+            }
+            return true;
         }
     }
 }

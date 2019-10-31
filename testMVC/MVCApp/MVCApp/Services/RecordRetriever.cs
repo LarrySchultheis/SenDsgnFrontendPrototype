@@ -26,7 +26,6 @@ namespace MVCApp.Services
 
 
                 return tdata;
-
             }
         }
     }

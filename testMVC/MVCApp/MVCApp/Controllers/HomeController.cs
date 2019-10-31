@@ -47,7 +47,7 @@ namespace MVCApp.Controllers
         public IActionResult PostEntry(TicketData td)
         {
             DataEntry de = new DataEntry();
-            de.PostEntry(td);
+            bool success = de.PostEntry(td);
 
             return View("DataEntry");
         }
