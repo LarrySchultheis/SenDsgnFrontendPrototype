@@ -8,21 +8,29 @@ namespace MVCApp.Services
 {
     public class TicketDataLogger
     {
-        public void LogChange(string action, string details, int entryID)
+        public bool LogChange(string action, string details, int entryID)
         {
-            using (var context = new TicketingSystemDBContext())
+            try
             {
-                TicketDataLog tdLog = new TicketDataLog()
+                using (var context = new TicketingSystemDBContext())
                 {
-                    ChangeTime = DateTime.Now,
-                    DataAction = action,
-                    Details = details,
-                    EntryId = entryID
-                };
+                    TicketDataLog tdLog = new TicketDataLog()
+                    {
+                        ChangeTime = DateTime.Now,
+                        DataAction = action,
+                        Details = details,
+                        EntryId = entryID
+                    };
 
-                context.TicketDataLog.Add(tdLog);
-                context.SaveChanges();
+                    context.TicketDataLog.Add(tdLog);
+                    context.SaveChanges();
+                }
             }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
