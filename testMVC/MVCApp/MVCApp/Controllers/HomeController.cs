@@ -50,8 +50,6 @@ namespace MVCApp.Controllers
             de.PostEntry(td);
 
             return View("DataEntry");
-
-
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
