@@ -44,7 +44,7 @@ namespace MVCApp.Models
             modelBuilder.Entity<TicketData>(entity =>
             {
                 entity.HasKey(e => e.EntryId)
-                    .HasName("PK__TicketDa__F57BD2D75106ACF9");
+                    .HasName("PK__TicketDa__F57BD2D7CD8BE48B");
 
                 entity.Property(e => e.EntryId).HasColumnName("EntryID");
 
@@ -79,21 +79,17 @@ namespace MVCApp.Models
 
                 entity.Property(e => e.StartTime).HasColumnType("datetime");
 
-                entity.Property(e => e.TrailerNumber)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.HasOne(d => d.JobType)
                     .WithMany(p => p.TicketData)
                     .HasForeignKey(d => d.JobTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TicketDat__JobTy__3D5E1FD2");
+                    .HasConstraintName("FK__TicketDat__JobTy__398D8EEE");
             });
 
             modelBuilder.Entity<TicketDataLog>(entity =>
             {
                 entity.HasKey(e => e.LogId)
-                    .HasName("PK__TicketDa__5E5499A865BCD520");
+                    .HasName("PK__TicketDa__5E5499A8F0E756A3");
 
                 entity.Property(e => e.LogId).HasColumnName("LogID");
 
@@ -114,7 +110,7 @@ namespace MVCApp.Models
                     .WithMany(p => p.TicketDataLog)
                     .HasForeignKey(d => d.EntryId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TicketDat__Entry__403A8C7D");
+                    .HasConstraintName("FK__TicketDat__Entry__3C69FB99");
             });
 
             OnModelCreatingPartial(modelBuilder);
