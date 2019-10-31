@@ -22,6 +22,7 @@
                 <th>Stage Number</th>
                 <th>Employee Name</th>
                 <th>Time</th>
+                <th>Status</th>
             </tr>
         </thead>
 
@@ -29,13 +30,14 @@
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.JobType.JobType1)</td>
-                    <td>@Html.DisplayFor(modelItem => item.TripNumber)</td>
-                    <td>@Html.DisplayFor(modelItem => item.StageNumber)</td>
-                    <td>@Html.DisplayFor(modelItem => item.EmployeeName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.StartTime)</td>
-                </tr>
+            <tr>
+                <td>@item.JobType.JobType1</td>
+                <td>@item.TripNumber</td>
+                <td>@item.StageNumber</td>
+                <td>@item.EmployeeName</td>
+                <td>@item.StartTime</td>
+                <td>@(item.IsClosed ? "Closed" : "Open")</td>
+            </tr>
             }
         </tbody>
     </table>

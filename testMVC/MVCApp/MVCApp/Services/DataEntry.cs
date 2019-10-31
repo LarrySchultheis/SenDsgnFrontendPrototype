@@ -28,6 +28,7 @@ namespace MVCApp.Services
 
                     td.JobTypeId = jtypeID;
                     td.EntryDate = DateTime.Now;
+                    td.IsClosed = false;
 
                     //very important null assignment
                     td.JobType = null;

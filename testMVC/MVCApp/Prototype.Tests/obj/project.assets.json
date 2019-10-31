@@ -7846,11 +7846,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\Prototype.Tests.csproj",
+      "projectUniqueName": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\Prototype.Tests.csproj",
       "projectName": "Prototype.Tests",
-      "projectPath": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\Prototype.Tests.csproj",
+      "projectPath": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\Prototype.Tests.csproj",
       "packagesPath": "C:\\Users\\larry\\.nuget\\packages\\",
-      "outputPath": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\obj\\",
+      "outputPath": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\Prototype.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7869,8 +7869,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
-              "projectPath": "G:\\Github\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj"
+            "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj": {
+              "projectPath": "G:\\GitKraken\\SenDsgnPrototype\\testMVC\\MVCApp\\MVCApp\\MVCApp.csproj"
             }
           }
         }
