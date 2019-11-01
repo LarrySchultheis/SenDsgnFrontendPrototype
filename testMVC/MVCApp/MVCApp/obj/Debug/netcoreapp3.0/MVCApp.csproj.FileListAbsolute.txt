@@ -641,3 +641,4 @@ G:\GitKraken\SenDsgnPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCA
 G:\GitKraken\SenDsgnPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.csproj.CopyComplete
 G:\GitKraken\SenDsgnPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.dll
 G:\GitKraken\SenDsgnPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.pdb
+G:\GitKraken\SenDsgnPrototype\testMVC\MVCApp\MVCApp\obj\Debug\netcoreapp3.0\MVCApp.csprojAssemblyReference.cache
